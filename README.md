@@ -14,3 +14,12 @@
 
 **Order of operations**
 The arithmetic we learned in primary school has conventions about the order in which operations are evaluated. Some remember these by a mnemonic such as PEMDAS - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.
+
+
+**Comparison Operations**
+| Operation |	Description |	Operation	Description |
+|-----------|-------------|----------------|
+|a == b |	a equal to b	|	a != b	a not equal to b |
+|a < b |	a less than b	|	a > b	a greater than b |
+|a <= b |	a less than or equal to b	|	a >= b	a greater than or equal to b |
+
