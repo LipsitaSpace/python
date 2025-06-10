@@ -23,3 +23,25 @@ The arithmetic we learned in primary school has conventions about the order in w
 |a < b |	a less than b	|	a > b	a greater than b |
 |a <= b |	a less than or equal to b	|	a >= b	a greater than or equal to b |
 
+| Operator | Description  |
+|------------- |--------------- |
+(expressions...),
+[expressions...], 
+{key: value...}, {expressions...}  | Binding or parenthesized expression, list display, dictionary display, set display  |
+| x[index], x[index:index], x(arguments...), x.attribute  | Subscription, slicing, call, attribute reference  |
+| await x | Await expression |
+| ** | Exponentiation | 
+|+x, -x, ~x | Positive, negative, bitwise NOT |
+| *, @, /, //, % | Multiplication, matrix multiplication, division, floor division, remainder |
+| +, - | Addition and subtraction | 
+| <<, >> | Shifts | 
+| & | Bitwise AND |
+| ^ | Bitwise XOR |
+| | | Bitwise OR | 
+| in, not in, is, is not, <, <=, >, >=, !=, == | Comparisons, including membership tests and identity tests| 
+| not x | Boolean NOT| 
+| and | Boolean AND |
+| or | Boolean OR |
+| if – else | Conditional expression |
+| lambda | Lambda expression |
+| := | Assignment expression |
