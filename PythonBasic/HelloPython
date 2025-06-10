@@ -1,0 +1,11 @@
+#basic syntax
+chicken_amount = int(input("how much chicken you want? "))
+print(chicken_amount)
+
+chicken_amount = chicken_amount + 4
+print(chicken_amount)
+1
+if chicken_amount > 3:
+    print("I don't want more chicken")
+else:
+    print("Thanks!")    
