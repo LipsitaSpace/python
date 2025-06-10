@@ -45,3 +45,12 @@ The arithmetic we learned in primary school has conventions about the order in w
 | if – else | Conditional expression |
 | lambda | Lambda expression |
 | := | Assignment expression |
+
+
+**String**
+| What you type... |	What you get |	example |	print(example)|
+|------------------|---------------|----------|--------------|
+|\' |	'|	'What\'s up?'	What's up?
+|\" |	"	| "That's \"cool\""	That's "cool"
+|\\ |	\	| "Look, a mountain: /\\" |	Look, a mountain: /\ |
+|\n	| | "1\n2 3" |	1 nextline-> 2 3|
