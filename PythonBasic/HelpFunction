@@ -1,0 +1,10 @@
+# The help() function is possibly the most important Python function you can learn. 
+# If you can remember how to use help(),
+# you hold the key to understanding most other functions.
+
+help(round)
+help(round(23.4567))
+# In round(n, ndigits) ndigits=-1 rounds to the nearest 10, 
+# ndigits=-2 rounds to the nearest 100 and so on
+print(round(30.98, -1))
+help(abs)

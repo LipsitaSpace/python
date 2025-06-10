@@ -1,0 +1,122 @@
+primes = [2, 3, 5, 7]
+
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+
+hands = [['J', 'Q', 'K'], ['2', '2', '2'], ['6', 'A', 'K']]
+
+my_favourite_things = [32, 'raindrops on roses', help]
+
+#indexing
+print(planets[0])
+print(planets[-1])
+
+#scaling
+print(planets[0:3])
+print(planets[:3])
+print(planets[3:])
+print(planets[1:-1]) # All the planets except the first and last
+print(planets[-3:]) # The last 3 planets
+
+#Lists are "mutable", meaning they can be modified "in place". 
+# One way to modify a list is to assign to an index or slice expression.
+
+planets[3] = 'Malacandra'
+print(planets)
+
+planets[:3] = ['Mur', 'Vee', 'Ur']
+print(planets)
+
+
+planets[:3] = ['Mercury', 'Venus', 'Earth','Mars']
+print(planets)
+
+print(len(planets))
+
+# The planets sorted in alphabetical order
+print(sorted(planets))
+
+print(sum(primes))
+
+#print(sum(planets))
+
+print(max(primes))
+
+#Interlude: objects
+x = 12 # x is a real number, so its imaginary part is 0.
+print(x.imag) # Here's how to make a complex number, in case you've ever been curious:
+c = 12 + 3j
+print(c.imag)
+
+'''The things an object carries around can also include functions.
+ A function attached to an object is called a method. 
+ (Non-function things attached to an object, such as imag, are called attributes).'''
+
+print(x.bit_length) # numbers have a method called bit_length.
+print(x.bit_length()) # to actually call it
+
+#list.append modifies a list by adding an item to the end:
+planets.append('Pluto')
+
+#list.pop removes and returns the last element of a list:
+planets.pop()
+
+#Where does Earth fall in the order of planets? We can get its index using the list.index method.
+print(planets.index('Earth'))
+
+#in operator to determine whether a list contains a particular value
+print("Earth" in planets)
+print("Calbefraques" in planets)
+
+
+'''Tuples
+Tuples are almost exactly the same as lists. They differ in just two ways.
+1: The syntax for creating them uses parentheses instead of square brackets
+2: They cannot be modified (they are immutable).'''
+
+t = (1, 2, 3)
+t1 = 1,2,3
+print(type(t1))
+
+#t[0] = 100
+
+#Tuples are often used for functions that have multiple return values.
+#The as_integer_ratio() method of float objects 
+# returns a numerator and a denominator in the form of a tuple:
+x = 0.125
+print(x.as_integer_ratio())
+#These multiple return values can be individually assigned as follows:
+numerator, denominator = x.as_integer_ratio()
+print(numerator / denominator)
+
+#swapping two variables : 
+a = 1
+b = 0
+a, b = b, a
+print(a, b)
+
+# def losing_team_captain(teams):
+#     """Given a list of teams, where each team is a list of names, return the 2nd player (captain)
+#     from the last listed team
+#     """
+#     return teams[-1][1]
+
+# def purple_shell(racers):
+#     """Given a list of racers, set the first place racer (at the front of the list) to last
+#     place and vice versa.
+    
+#     >>> r = ["Mario", "Bowser", "Luigi"]
+#     >>> purple_shell(r)
+#     >>> r
+#     ["Luigi", "Bowser", "Mario"]
+#     """
+#     a = racers[0]
+#     racers[0]=racers[-1]
+#     racers[-1]=a
+
+
+#     """Given an ordered list of arrivals to the party 
+#     and a name, return whether the guest with that
+#     name was fashionably late."""
+# def fashionably_late(arrivals, name):
+#     order = arrivals.index(name)
+#     return order >= len(arrivals) / 2 and order != len(arrivals) - 1
