@@ -244,3 +244,7 @@ There are plenty more out there. Additionally there are even more third party to
 PyPDF2: PDF toolkit
 xlwings: read and write Excel files
 Pillow: image reading and manipulation
+
+
+![image](https://github.com/user-attachments/assets/d43906cc-dd16-409d-8a5f-f1cb4759886c)
+
