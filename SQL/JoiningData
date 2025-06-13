@@ -1,0 +1,5 @@
+SELECT p.Name AS Pet_Name, o.Name AS Owner Name 
+FROM `bigquery-public-data.pet_records.pets` AS p 
+INNER JOIN `bigquery-public-data.pet_records.owners` AS o 
+ON p.ID = o.Pet_ID
+

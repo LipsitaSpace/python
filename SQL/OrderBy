@@ -1,0 +1,21 @@
+--ORDER BY is usually the last clause in your query, 
+--and it sorts the results returned by the rest of your query.
+SELECT A,B,C
+FROM `table`
+ORDER BY A
+
+--There are two ways that dates can be stored in BigQuery: 
+--as a DATE or as a DATETIME.
+YYYY-[M]M-[D]D
+-- YYYY: Four-digit year
+-- [M]M: One or two digit month
+-- [D]D: One or two digit day
+
+--Often you'll want to look at part of a date, like the year or the day. 
+--You can do this with EXTRACT. We'll illustrate this with a slightly 
+--different table, called pets_with_date.
+SELECT N,EXTRACT(DAY from Date) AS DAY
+FROM `table`
+
+SELECT N,EXTRACT(WEEK from Date) AS Week
+FROM `table`
