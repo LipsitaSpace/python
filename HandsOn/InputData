@@ -1,0 +1,10 @@
+import datetime
+
+def find_the_year(age):
+    yearleft = 100 - age
+    now = datetime.datetime.now().year
+    return now + yearleft
+
+name = input("enter your name: ")
+age = int(input("enter your age: "))
+print("you will be 100 years old on :", find_the_year(age))
