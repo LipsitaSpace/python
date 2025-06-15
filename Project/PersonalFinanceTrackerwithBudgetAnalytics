@@ -1,0 +1,39 @@
+#1. ETL & Store:
+import pandas as pd
+import sqlite3
+df = pd.read_csv("data/bank_statement.csv")
+df['date'] = pd.to_datetime(df['date'])
+df['amount'] = df['amount'].astype(float)
+conn = sqlite3.connect("finance.db")
+df.to_sql("transactions", conn, if_exists="replace", index=False)
+conn.close()
+
+# #2. SQL Categorization Logic:
+# -- Categorize expenses
+# SELECT *,
+#   CASE 
+#     WHEN description LIKE '%Amazon%' THEN 'Shopping'
+#     WHEN description LIKE '%Rent%' THEN 'Housing'
+#     WHEN description LIKE '%Uber%' THEN 'Transport'
+#     ELSE 'Others'
+#   END AS category
+# FROM transactions;
+
+
+# #3. Monthly Summary Query:
+# SELECT strftime('%Y-%m', date) AS month,
+#        SUM(CASE WHEN amount < 0 THEN amount ELSE 0 END) AS total_spent,
+#        SUM(CASE WHEN amount > 0 THEN amount ELSE 0 END) AS total_income
+# FROM transactions
+# GROUP BY month
+# ORDER BY month;
+
+#4. Budget Visualization:
+import matplotlib.pyplot as plt
+# Assume df is already queried
+df.plot(x='month', y=['total_spent', 'total_income'], kind='bar')
+plt.title('Monthly Spending vs Income')
+plt.xlabel('Month')
+plt.ylabel('Amount')
+plt.show()
+

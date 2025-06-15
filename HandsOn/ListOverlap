@@ -1,0 +1,6 @@
+List1 = list(map(int,input("Enter 1st list: ").split())) 
+List2 = list(map(int, input("Enter 2nd list: ").split()))
+
+# List = [x for x in List1 for y in List2 if x == y]
+List = list(set(List1) & set(List2))
+print(List)

@@ -1,0 +1,33 @@
+#1. ETL: Extract, Transform, Load
+import pandas as pd
+import sqlite3
+
+df = pd.read_csv('data/sales_data.csv')
+df.dropna(inplace=True)  # simple data cleaning
+
+conn = sqlite3.connect('sales.db')
+df.to_sql('sales', conn, if_exists='replace', index=False)
+conn.close()
+
+#2. SQL Analysis (analytics_queries.sql)
+# -- Top 5 selling products
+# SELECT product_name, SUM(quantity) as total_sold
+# FROM sales
+# GROUP BY product_name
+# ORDER BY total_sold DESC
+# LIMIT 5;
+
+#3. Visualization:
+import matplotlib.pyplot as plt
+import sqlite3
+import pandas as pd
+
+conn = sqlite3.connect('sales.db')
+query = "SELECT product_name, SUM(quantity) as total_sold FROM sales GROUP BY product_name"
+df = pd.read_sql_query(query, conn)
+
+plt.bar(df['product_name'], df['total_sold'])
+plt.title("Top Products by Quantity Sold")
+plt.xticks(rotation=45)
+plt.show()
+

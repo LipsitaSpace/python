@@ -1,0 +1,6 @@
+UserInput = input("Enter the list items: ")
+List = list(map(int,UserInput.split())) 
+
+NewList = [x for x in List if x <= 5]
+
+print(NewList)
