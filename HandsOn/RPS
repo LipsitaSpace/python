@@ -1,0 +1,26 @@
+def get_choice(player_number):
+    choice = input("Enter player{} choice: ".format(player_number)).strip().lower()
+    while choice not in ["rock", "paper", "scissors"]:
+        choice = input("Enter a valid choice: ").strip().lower()
+    return choice    
+def winner(p1, p2):
+    if p1 == p2:
+        return "It's a tie"
+    elif [p1 == "rock" and p2 == "scissors"] or [p1 == "paper" and p2 == "rock"] or [p1 == "scissors" and p2 == "paper"] :
+        return "player1 is the winner"
+    else:
+        return "player2 is the winner"
+def play_game():
+    while True:
+        print("\n--- Rock-Paper-Scissors ---")
+        player1 = get_choice(1)
+        player2 = get_choice(2) 
+
+        result = winner(player1, player2)
+        print(result)
+
+        play_again = input("Do you want to play again: ").strip().lower()
+        if play_again != "yes":
+            print("Thanks for playing!")
+            break
+play_game()        

@@ -1,0 +1,8 @@
+num = input("enter the string: ")
+
+cleaned_input = num.replace(" ", "").lower()
+
+if cleaned_input == cleaned_input[::-1]:
+    print("{} is a palindrom".format(num))
+else: 
+     print("{} is not a palindrom".format(num))   

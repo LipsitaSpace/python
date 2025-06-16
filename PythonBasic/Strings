@@ -22,6 +22,17 @@ planet = 'Pluto'
 planet[0]
 # Slicing
 planet[-3:]
+#string[start:stop:step]
+# start: index to begin slicing (inclusive)
+# stop: index to end slicing (exclusive)
+# step: how many characters to skip
+s = "hello world"
+print(s[0:5])     # 'hello' (characters from index 0 to 4)
+print(s[6:])      # 'world' (from index 6 to end)
+print(s[:5])      # 'hello' (from start to index 4)
+print(s[::2])     # 'hlowrd' (every second character)
+print(s[::-1])    # 'dlrow olleh' (reverses the string)
+
 #length
 len(planet)
 # loop over String
